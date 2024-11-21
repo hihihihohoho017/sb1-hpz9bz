@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-50: #eef2ff;
+  --primary-100: #e0e7ff;
+  --primary-200: #c7d2fe;
+  --primary-300: #a5b4fc;
+  --primary-400: #818cf8;
+  --primary-500: #6366f1;
+  --primary-600: #4f46e5;
+  --primary-700: #4338ca;
+  --primary-800: #3730a3;
+  --primary-900: #312e81;
+  
+  --surface-50: #ffffff;
+  --surface-100: #f9fafb;
+  --surface-200: #f3f4f6;
+  --surface-300: #e5e7eb;
+  --surface-400: #d1d5db;
+  --surface-500: #9ca3af;
+  --surface-600: #6b7280;
+  --surface-700: #4b5563;
+  --surface-800: #1f2937;
+  --surface-900: #111827;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-100);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface-300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--surface-400);
+}
+
+/* Global styles */
+body {
+  @apply bg-surface-50 text-surface-900;
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Card hover effects */
+.hover-card {
+  @apply transition-all duration-200 hover:shadow-lg hover:scale-[1.02];
+}
+
+/* Button styles */
+.btn-primary {
+  @apply px-4 py-2 bg-primary-600 text-white rounded-lg 
+         hover:bg-primary-700 transition-colors duration-200 
+         focus:outline-none focus:ring-2 focus:ring-primary-500 
+         focus:ring-offset-2;
+}
+
+.btn-secondary {
+  @apply px-4 py-2 bg-surface-100 text-surface-700 rounded-lg 
+         hover:bg-surface-200 transition-colors duration-200 
+         focus:outline-none focus:ring-2 focus:ring-surface-500 
+         focus:ring-offset-2;
+}
+
+/* Input styles */
+.input-primary {
+  @apply w-full px-4 py-2 bg-white border border-surface-300 
+         rounded-lg focus:ring-2 focus:ring-primary-500 
+         focus:border-primary-500 transition-colors duration-200;
+}
+
+/* Badge styles */
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.badge-primary {
+  @apply bg-primary-100 text-primary-800;
+}
+
+.badge-success {
+  @apply bg-green-100 text-green-800;
+}
+
+.badge-warning {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.badge-error {
+  @apply bg-red-100 text-red-800;
+}
